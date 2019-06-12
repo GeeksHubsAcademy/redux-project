@@ -1,5 +1,5 @@
 {
-  "name": "formRegister",
+  "name": "form-register",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -8,5 +8,8 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "concurrently": "^4.1.0"
+  }
 }

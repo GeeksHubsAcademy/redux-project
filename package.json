@@ -4,7 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start:back":"cd backend && npm start",
+    "start:front":"cd frontend && npm start",
+    "start":"concurrently \"npm run start:back\" \"npm run start:front\""
   },
   "keywords": [],
   "author": "",

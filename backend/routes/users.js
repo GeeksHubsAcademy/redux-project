@@ -8,7 +8,10 @@ router.post( '/register', async ( req, res ) => {
             email: req.body.email,
             password: req.body.password,
         } ).save()
-        res.send( user )
+        res.send({
+             info: "User successfully created",
+             user 
+            })
     } catch ( error ) {
         console.log( error )
     }

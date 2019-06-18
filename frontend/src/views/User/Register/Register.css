@@ -1,28 +1,36 @@
-.register{
+.register {
     display: flex;
     flex-direction: column;
     padding: 3em;
 }
 
-.register .error{
-    color:red;
+.register .info {
+    font-size: 1.2em;
+    color:rgb(52, 255, 52);
+    background-color: rgb(0, 0, 0);
 }
-.register input{
-    all:unset;
+
+.register .error {
+    color: red;
+}
+
+.register input {
+    all: unset;
     padding: 0.5em;
     border-radius: 0.5em;
     border: 0.1em solid rgb(109, 255, 153);
-    margin:1em;
+    margin: 1em;
     width: 50vw;
     background-color: rgb(242, 255, 245);
 }
-.register button{
-    all:unset; 
+
+.register button {
+    all: unset;
     padding: 0.5em;
     border-radius: 0.5em;
     border: 0.1em solid rgb(109, 255, 153);
-    
-    margin:1em;
+
+    margin: 1em;
     padding: 0.5em;
     width: 5em;
 }

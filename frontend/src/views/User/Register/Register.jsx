@@ -1,8 +1,7 @@
 import React from 'react';
-import axios from 'axios';
 import './Register.css';
 import { isEmail } from 'validator';
-import store from '../../../redux/store.js'
+import {registerUser} from '../../../redux/actions/user'
 class Register extends React.Component { //componente de clase
 
     constructor(props) {
@@ -24,17 +23,7 @@ class Register extends React.Component { //componente de clase
             event.preventDefault();
             await this.validateForm();
             if (this.state.errorEmail.length === 0 && this.state.errorPassword.length === 0) {
-                const res = await axios.post('http://localhost:3001/users/register', {
-                    name: this.state.name,
-                    email: this.state.email,
-                    password: this.state.password,
-                })
-                console.log(res.data);
-                const action = {
-                    type: 'REGISTER',
-                    payload:res.data.user,
-                }
-                store.dispatch(action)
+                const res=await registerUser(this.state);
                 this.setState({ backendInfo: res.data.info });
             }
         }

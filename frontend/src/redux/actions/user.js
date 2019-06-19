@@ -12,3 +12,11 @@ export const registerUser = async({name, email, password}) => {
     store.dispatch( action )
     return res;
 }
+export const getAllUsers=async ()=>{
+    const res = await axios.get('http://localhost:3001/users/all');// hago la petición de todos los usuarios al backend
+    const action={
+        type:'GET_ALL',
+        payload:res.data
+    }        
+    store.dispatch(action);
+}

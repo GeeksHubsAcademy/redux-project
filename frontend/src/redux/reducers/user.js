@@ -5,6 +5,11 @@ function userReducer(state = {}, action) {
                 ...state,
                 user:action.payload
             } ;
+        case 'GET_ALL':
+            return {
+                ...state,
+                users:action.payload
+            }
         default:
             return state
     }

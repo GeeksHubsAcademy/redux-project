@@ -8,8 +8,8 @@
     "start:back": "cd backend && npm start",
     "start:front": "cd frontend && npm start",
     "start": "concurrently \"npm run start:back\" \"npm run start:front\"",
-    "install:back":"cd backend && npm install",
-    "install:front":"cd frontend && npm install",
+    "install:back": "cd backend && npm install",
+    "install:front": "cd frontend && npm install",
     "postinstall": "npm run install:back && npm run install:front "
   },
   "keywords": [],

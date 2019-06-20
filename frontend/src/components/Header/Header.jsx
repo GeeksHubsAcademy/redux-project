@@ -6,16 +6,16 @@ const Header = props => {
   return (
     <ul>
       <li> <NavLink className="navLink" activeClassName="is-active" to="/" exact>Home</NavLink> </li>
+      <li> <NavLink className="navLink" activeClassName="is-active" to="/users/">users</NavLink></li>
       {props.user ?
       <div>
          {props.user.name}
+         <br/>
          {props.user.email}
-        <li> <NavLink className="navLink" activeClassName="is-active" to="/users/">users</NavLink></li>
+        <li> <NavLink className="navLink" activeClassName="is-active" to="/profile/">Profile</NavLink></li>
         <li> <NavLink className="navLink" activeClassName="is-active" to="/logout/">Logout</NavLink></li>
         </div>:
         <div>
-          
-          <li> <NavLink className="navLink" activeClassName="is-active" to="/users/">users</NavLink></li>
           <li> <NavLink className="navLink" activeClassName="is-active" to="/register/">Register</NavLink></li>
           <li> <NavLink className="navLink" activeClassName="is-active" to="/login/">Login</NavLink></li></div>
       }

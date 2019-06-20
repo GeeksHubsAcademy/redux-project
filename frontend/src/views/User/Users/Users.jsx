@@ -94,7 +94,6 @@ const Users =props=> {
         console.log('componente ya montado')
             getAllUsers()
     },[])
-    
         return (
             <div className="users">
                 Estos son los usuarios:

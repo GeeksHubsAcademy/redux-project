@@ -45,73 +45,67 @@
 
 //-- STATELESS CLASS COMPONENT WITH REDUX
 
-// import React from 'react';
-// import axios from 'axios';
-// import {connect } from 'react-redux';
-// import store from '../../../redux/store';
-// import {getAllUsers} from '../../../redux/actions/user'
-// class Users extends React.Component {
-//     async componentDidMount() {
-//        try {
-//             getAllUsers()
-//         } catch (error) {
-//             console.log(error)
-//         }
-//     }
-//     render() {
-//         return (
-//             <div className="users">
-//                 Estos son los usuarios:
-//                 {this.props.users && this.props.users.map(user => (
-//                     <div key={user._id}>
-//                         <h3>{user.name}</h3>
-//                         <span>{user.email}</span>
-//                     </div>
-//                 ))}
-//             </div>
-//         )
-//     }
-// }
-
-// const mapStateToProps=state=>{
-//     return {
-//         users:state.userReducer.users 
-//     }
-// }
-// export default connect(mapStateToProps)(Users);
-
-
-
-// -- REACT HOOKS WITH REDUX--//
-import React, {useEffect}  from 'react';
+import React from 'react';
 import axios from 'axios';
-import {connect } from 'react-redux';
+import { connect } from 'react-redux';
 import store from '../../../redux/store';
-import {getAllUsers} from '../../../redux/actions/user';
-import './Users.css';
-const Users =props=> {
-    useEffect(()=>{
-        console.log('componente ya montado')
-            getAllUsers()
-    },[])
+import { getAllUsers } from '../../../redux/actions/user'
+class Users extends React.Component {
+
+    componentDidMount() {
+        getAllUsers()
+    }
+    componentWillUnmount(){
+        console.log('users se ha desmontado ')
+    }
+    render() {
         return (
             <div className="users">
                 Estos son los usuarios:
-                {props.users && props.users.map(user => (
-                    <div key={user._id} >
+                {this.props.users && this.props.users.map(user => (
+                    <div key={user._id}>
                         <h3>{user.name}</h3>
                         <span>{user.email}</span>
-                        <span>{user.createdAt}</span>
                     </div>
                 ))}
             </div>
         )
-    
+    }
 }
 
-const mapStateToProps=state=>{
+const mapStateToProps = state => {
     return {
-        users:state.userReducer.users 
+        users: state.userReducer.users
     }
 }
 export default connect(mapStateToProps)(Users);
+
+
+
+// -- REACT HOOKS WITH REDUX--//
+// import React, {useEffect}  from 'react';
+// import {connect } from 'react-redux';
+// import {getAllUsers} from '../../../redux/actions/user';
+// import './Users.css';
+// const Users =props=> {
+//     useEffect(()=> {getAllUsers()},[])
+//         return (
+//             <div className="users">
+//                 Estos son los usuarios:
+//                 {props.users && props.users.map(user => (
+//                     <div key={user._id} >
+//                         <h3>{user.name}</h3>
+//                         <span>{user.email}</span>
+//                         <span>{user.createdAt}</span>
+//                     </div>
+//                 ))}
+//             </div>
+//         )
+// }
+
+// const mapStateToProps=state=>{
+//     return {
+//         users:state.userReducer.users //
+//     }
+// }
+// export default connect(mapStateToProps)(Users);

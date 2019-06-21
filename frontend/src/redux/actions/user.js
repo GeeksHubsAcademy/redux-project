@@ -1,6 +1,7 @@
 import store from '../store';
 import axios from 'axios';
 
+
 export const registerUser = async ( { name, email, password } ) => {
     const res = await axios.post( 'http://localhost:3001/users/register', {
         name,
@@ -24,7 +25,6 @@ export const getAllUsers = async () => {
             payload: res.data
         }
         store.dispatch( action );
-
     } catch ( error ) {
         console.log( error )
     }
